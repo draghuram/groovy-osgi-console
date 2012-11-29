@@ -37,16 +37,25 @@ The above project aims to do something very similar but in a Spring
 MVC world. I took the code and modified it in order to get it working
 in the brave and shiny world of OSGi. The code is tested with Virgo.
 
-Building and Deploying
-======================
+Building
+========
+
+You can simply download the server bundle from the "Downloads" page. How ever,
+if you need to make some changes in the server or perhaps want a different version
+of Groovy, you do need to build (requires "groovyc" to be available).
 
 $ cd groovy-osgi-console 
 $ build.sh
 
-This builds a bundle called "groovy-osgi-console-server.jar" which can
-be deployed to the OSGi container.  In case of Virgo, just copy it to
-the $VIRGODIR/pickup and Virgo would automatically load it. Note that
-this bundle has no external dependencies.
+This builds a bundle called "groovy-osgi-console-server.jar".
+
+Deployment
+==========
+
+Install "groovy-osgi-console-server.jar" in the OSGi container and start it. The bundle has no
+external dependencies.
+
+In case of Virgo, just copy it to the $VIRGODIR/pickup and Virgo would automatically load it. 
 
 Usage 
 =====
