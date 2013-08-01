@@ -17,16 +17,16 @@ play with. This is very tedious as any small change requires full
 compilation and deployment in the container. Alternatives exist but
 none of them are much better.
 
-This becomes apparent to any one who is accustomed to firing up a
-shell such as Jython or Groovy, start instantiating classes and
-calling Java APIs from the command prompt.  It is the quickest way of
-playing around with Java APIs that obviates the need to write classes
-and compile them. How ever, this approach doesn't work with a OSGi 
-contaner such as Virgo because all the java services are only
-available to the code running in the container. So I started looking
-for ways of running a server in the container that provides network
-connection to an outside shell such as Jython. With the power of
-Google, I soon found out the following excellent article:
+This process is especially annoying to some one who is accustomed to
+firing up a shell such as Jython or Groovy, start instantiating
+classes and calling Java APIs from the command prompt.  It is the
+quickest way of playing around with Java APIs that obviates the need
+to write classes and compile them. How ever, this approach doesn't
+work with a OSGi contaner such as Virgo because all the java services
+are only available to the code running in the container. So I started
+looking for ways of running a server in the container that provides
+network connection to an outside shell such as Jython. With the power
+of Google, I soon found out the following excellent article:
 
 http://groovy.codehaus.org/Embedding+a+Groovy+Console+in+a+Java+Server+Application
 
@@ -65,7 +65,7 @@ automatically load it.
 Usage 
 =====
 
-let us assume that we have a OSGi service available that implements
+Let us assume that we have a OSGi service available that implements
 the following interface: ::
 
     public interface Service {
@@ -85,23 +85,12 @@ method. ::
     groovy:000> service.echo("Hello, World!\n")
     Hello, World!
     
-Links 
-=====
-
-- http://www.eclipse.org/virgo/
-
-- http://groovy.codehaus.org/Embedding+a+Groovy+Console+in+a+Java+Server+Application
-
-- http://69.89.31.118/~iterativ/wordpress/2007/05/14/embedding-a-groovy-console-in-a-java-server-application
-
 TODO 
 ====
 
-This project should be considered an extremely early version in the
-true tradition of "release early and release often". Several
-enhancements can be done to make it easier to work with (though, it
-works perfectly good enough for me in its present incarnation). Some
-of the tasks include:
+The project can use some love in the form of following enhancements,
+though it works perfectly good enough for me in its present
+incarnation. 
 
 - Have a Makefile instead of shell script
 
@@ -115,6 +104,15 @@ Contact
 
 Please send email to draghuram at gamil dot com if you have any
 feedback and/or questions.
+
+Links 
+=====
+
+- http://www.eclipse.org/virgo/
+
+- http://groovy.codehaus.org/Embedding+a+Groovy+Console+in+a+Java+Server+Application
+
+- http://69.89.31.118/~iterativ/wordpress/2007/05/14/embedding-a-groovy-console-in-a-java-server-application
 
 Acknowledgements 
 ================
