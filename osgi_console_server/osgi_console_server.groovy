@@ -117,7 +117,11 @@ class GroovyShellThread extends Thread {
 
 class GroovyShellService extends GroovyService {
     public ServerSocket serverSocket;
+
+    // Port should perhaps be configurable but the default port worked
+    // without any issues till now, so may be, YAGNI. 
     public int socket = 6789;
+
     public Thread serverThread;
     public List<GroovyShellThread>threads = new ArrayList<GroovyShellThread>();
 
@@ -145,19 +149,6 @@ class GroovyShellService extends GroovyService {
                 Socket clientSocket = null;
                 clientSocket = serverSocket.accept();
                 println "GroovyShellService launch() clientSocket: " + clientSocket
-
-                /*
-                try {
-                    clientSocket = serverSocket.accept();
-                    println "GroovyShellService launch() clientSocket: " + clientSocket
-                }
-                catch (IOException e) {
-                    e.printStackTrace()
-
-                    // This particular "return" is causing groovyc to fail with an NPE.
-                    return
-                    }
-                */
 
                 GroovyShellThread clientThread = new GroovyShellThread(clientSocket, createBinding());
                 threads.add(clientThread);
@@ -193,6 +184,7 @@ class GroovyShellService extends GroovyService {
     }
 }
 
+// This class implements the interaction between groovy server and OSGi run time. 
 class Server implements BundleActivator {
     GroovyShellService groovyShellService = null;
 
