@@ -36,7 +36,7 @@ http://69.89.31.118/~iterativ/wordpress/2007/05/14/embedding-a-groovy-console-in
 
 The above project aims to do something very similar but in a Spring
 MVC world. I took the code and modified it in order to get it working
-in the brave and shiny world of OSGi. The code is tested with Virgo.
+in OSGi. The code is tested with Virgo.
 
 Building
 ========
@@ -102,7 +102,7 @@ incarnation.
 Contact 
 =======
 
-Please send email to draghuram at gamil dot com if you have any
+Please send email to draghuram at gmail dot com if you have any
 feedback and/or questions.
 
 Links 
